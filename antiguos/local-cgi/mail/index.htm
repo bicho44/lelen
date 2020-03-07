@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<form action="/local-cgi/mail/FormMail.cgi" method="post" enctype="application/x-www-form-urlencoded" name="formmail">
+<!-- Lista de cuentas de email a las cuales se le envia el email -->
+<input type=hidden name="recipient" value="info@lelen.com.ar">
+<!-- Asunto del mensaje -->
+<input type=hidden name="subject" value="Consulta desde la web">
+<!-- Página a la cual se quiere redireccionar al enviar el formulario -->
+ <input type=hidden name="redirect" value="gracias.htm">
+ <!-- Campos requeridos -->
+ <input type=hidden name="required" value="email,realname,telefono">
+ <!-- Impresion de datos de la cabecera del email -->
+ <input type=hidden name="print_config" value="email,realname">
+<!-- Ordenamiento de los campos en el mail enviado -->
+<input type=hidden name="sort" value="order:realname,email,direccion,telefono,Contacto,Rubro">
+<!-- Página de error customizada -->
+<input type=hidden name="missing_fields_redirect" value="">
+
+  <table width="1024" border="0" align="center">
+    <tr> 
+      <td colspan="2"> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Este 
+          es un ejemplo de formulario para utilizar con el FormMail. A continuaci&oacute;n 
+          le mostraremos como customizarlo. As&iacute; es como esta configurado 
+          actualmente su FormMail.cgi, esto datos se pueden cambiar y ajustar 
+          a sus necesidades. Todos lo que se encuentre entre <strong><font color="#0000FF">&lt;!-</font>-</strong> 
+          y<strong> <font color="#0000FF">--&gt;</font></strong> es un comentario 
+          dentro de su codigo HTML. Los campos que son type=hidden son campos 
+          ocultos y para modificarlos debe entrar en modo de vista de c&oacute;digo 
+          html para editarlos. Los nombres de estos campos listados mas abajo se deben respetar.</font><font color="#666666" size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <br>
+          &lt;!-- Lista de cuentas de email a las cuales se le envia el email 
+          separada por comas--&gt;</font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;recipient&quot; value=&quot;<strong>info@lelen.com.ar</strong>&quot;&gt;<br>
+          <font color="#666666">&lt;!-- Asunto del mensaje --&gt;</font><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;subject&quot; value=&quot;<strong>Consulta desde la web</strong>&quot;&gt;<br>
+          <font color="#666666">&lt;!-- P&aacute;gina a la cual se quiere redireccionar 
+          al enviar el formulario --&gt;</font><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;redirect&quot; value=&quot;<strong>gracias.htm</strong>&quot;&gt;<br>
+          <font color="#666666">&lt;!-- Campos requeridos --&gt;</font><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;required&quot; value=&quot;<strong>email,realname,telefono</strong>&quot;&gt;<br>
+          <font color="#666666">&lt;!-- Ordenamiento de los campos en el mail 
+          enviado --&gt;</font><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;sort&quot; value=&quot;<strong>order:realname,email,telefono,direccion,Contacto,Rubro</strong>&quot;&gt;<br>
+          <font color="#666666">&lt;!-- P&aacute;gina de error customizada si falta algun dato requerido con el cual es llenado el formulario--&gt;</font><br>
+	  <font color="#666666">&lt;!-- S&iacute; elimina este campo se mostrar&aacute; la p&aacute;gina de error del propio FormMail.cgi el cual le indica cuales son los campos requeridos que no fueron llenado -&gt;</font><br>
+          &lt;input <font color="#FF0000"><em><strong>type=hidden</strong></em></font> 
+          name=&quot;missing_fields_redirect&quot; value=&quot;<strong></strong>&quot;&gt;</font></p>
+        <br>
+        </td>
+    </tr>
+    <tr> 
+      <td width="203" align="right">Nombre : </td>
+      <td width="715"><input type=text name="realname"></td>
+    </tr>
+    <tr> 
+      <td height="26" align="right">Email : </td>
+      <td><input type=text name="email"></td>
+    </tr>
+    <TR> 
+      <TD align="right" vAlign=top>Direcci&oacute;n : </TD>
+      <TD><input type=text name="direccion"></TD>
+    </TR>
+    <TR> 
+      <TD align="right" vAlign=top>Telefono : </TD>
+      <TD><input type=text name="telefono"></TD>
+    </TR>
+    <TR> 
+      <TD align="right" vAlign=top>Como nos conocio?: </TD>
+      <TD> <INPUT name=Contacto type=radio
+      value="Revista">
+        Revista <INPUT name=Contacto type=radio value="Web">
+        Web 
+        <INPUT name=Contacto type=radio value="Otros">
+        Otros</TD>
+    </TR>
+    <tr> 
+      <td align="right">Rubros : </td>
+      <td> <INPUT name=Rubro type=checkbox value=Infromática>
+        Inform&aacute;tica<br> <INPUT name=Rubro type=checkbox value=Ingeniería>
+        Ingenier&iacute;a<br> <INPUT name=Rubro type=checkbox value=Túrismo>
+        T&uacute;rismo<br> <INPUT name=Rubro type=checkbox value=Seguridad>
+        Seguridad<br> <INPUT name=Rubro type=checkbox value=Otros>
+        Otros</td>
+    </tr>
+    <tr> 
+      <td align="center"><input type="reset" name="reset" value="Limpiar"></td>
+      <td align="center"><input type="submit" name="Submit" value="Enviar"></td>
+    </tr>
+  </table>
+
+</form>
+
+</body>
+</html>
